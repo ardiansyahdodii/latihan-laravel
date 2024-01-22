@@ -15,12 +15,8 @@ class PostController extends Controller
         ]);
     }
 
-    public function show($slug){
+    public function show(Post $post){
         
-        $post = Post::find($slug);
-        if(!$post){
-            abort(404);
-        }
         return view('detailBlog', [
             "title" => "Blog Detail",
             "post" => $post
