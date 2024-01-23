@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-    <h1>Blog Page</h1>
+    <h1>{{ $title }}</h1>
     <article class="mt-4">
         <h2>{{ $post->title }}</h2>
         {!! $post->body !!}

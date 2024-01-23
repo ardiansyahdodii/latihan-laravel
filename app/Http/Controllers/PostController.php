@@ -7,18 +7,17 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
-        $posts = Post::all();
+    public function index(){ 
         return view('blog', [
-            "title" => "Blog",
-            "posts" => $posts
+            "title" => "All Posts",
+            "posts" => Post::latest()->get(),
         ]);
     }
 
     public function show(Post $post){
         
         return view('detailBlog', [
-            "title" => "Blog Detail",
+            "title" => "Post Detail : $post->title",
             "post" => $post
         ]);
     }
