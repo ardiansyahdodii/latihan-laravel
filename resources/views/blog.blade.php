@@ -2,7 +2,18 @@
 
 @section('content')
 
-    <h1>{{ $title }}</h1>
+    <h1 class="text-center">{{ $title }}</h1>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <form action="/blog">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control border-2 border-black" placeholder="Search Posts" name="search" value="{{ request('search') }}">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     @foreach ($posts as $post)
         <article class="mt-5">
