@@ -13,7 +13,7 @@
                 {{ $post->user->name }}
             </a>
             --
-            <a href="categories/{{ $post->category->slug }}" class="text-decoration-none">
+            <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">
                 {{ $post->category->name }}
             </a>
             {!! $post->body !!}
